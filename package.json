@@ -1,12 +1,17 @@
 {
   "name": "express-react",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "node app.js"
+    "predev": "yarn workspace client build",
+    "dev": "yarn workspace server dev"
   },
+  "workspaces": [
+    "server",
+    "client"
+  ],
   "dependencies": {
     "express": "^4.18.1"
   },
